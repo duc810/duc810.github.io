@@ -2,6 +2,27 @@ const socket = io('https://stream3005.herokuapp.com');
 
 $('#div-chat').hide();
 
+let customConfig;
+
+$.ajax({
+  url: "https://service.xirsys.com/ice",
+  data: {
+    ident: "duc810",
+    secret: "8b039546-6c59-11e7-af37-0d0fb4dee8b2",
+    domain: "duc810.github.io",
+    application: "default",
+    room: "default",
+    secure: 1
+  },
+  success: function (data, status) {
+    // data.d is where the iceServers object lives
+    customConfig = data.d;
+    console.log(customConfig);
+  },
+  async: false
+})
+
+
 socket.on('DANH_SACH_ONLINE', arrUserInfo => {
     $('#div-chat').show();
     $('#div-dang-ky').hide();
@@ -44,7 +65,7 @@ const peer = new Peer({
     host: 'webrtc678.herokuapp.com', 
     secure: true, 
     port: 443, 
-    //config: customConfig 
+    config: customConfig 
 });
 
 peer.on('open', id => {
