@@ -15,6 +15,6 @@ io.on('connection', socket => {
     socket.on('disconnect', () => {
         const index = arrUserInfo.findIndex(user => user.peerId === socket.peerId);
         arrUserInfo.splice(index, 1);
-        io.emit('AI_DO_NGAT_KET_NOI', socket.peerId);
+        io.emit('AI_DO_NGAT_KET_NOI1', socket.peerId);
     });
 });
