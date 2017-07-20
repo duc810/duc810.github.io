@@ -1,5 +1,5 @@
 const socket = io('https://stream3005.herokuapp.com');
-console.log('ok');
+
 $('#div-chat').hide();
 
 let customConfig;
@@ -47,7 +47,7 @@ socket.on('DANG_KY_THAT_BAT', () => alert('Vui long chon username khac!'));
 //hiện thị trình video lên
 function openStream() {
     const config = { audio: true, video: true };
-  console.log(navigator.mediaDevices.getUserMedia(config));return;
+  //console.log(navigator.mediaDevices.getUserMedia(config));return;
     return navigator.mediaDevices.getUserMedia(config);
 }
 
