@@ -1,5 +1,5 @@
 const socket = io('https://stream3005.herokuapp.com');
-
+console.log('ok11111111111');
 $('#div-chat').hide();
 
 let customConfig;
