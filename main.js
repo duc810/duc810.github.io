@@ -47,6 +47,7 @@ socket.on('DANG_KY_THAT_BAT', () => alert('Vui long chon username khac!'));
 //hiện thị trình video lên
 function openStream() {
     const config = { audio: true, video: true };
+  console.log(navigator.mediaDevices.getUserMedia(config));return;
     return navigator.mediaDevices.getUserMedia(config);
 }
 
