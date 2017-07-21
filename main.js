@@ -48,7 +48,7 @@ const peer = new Peer({
     host: 'webrtc678.herokuapp.com', 
     secure: true, 
     port: 443, 
-    config: customConfig 
+    //config: customConfig 
 });
 
 peer.on('open', id => {
